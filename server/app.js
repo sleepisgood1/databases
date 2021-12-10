@@ -1,9 +1,9 @@
 var express = require('express');
-var db = require('./db');
+var db = require('./db'); // index.js in db folder
 
 // Middleware
-var morgan = require('morgan');
-var cors = require('cors');
+var morgan = require('morgan'); // logger middleware
+var cors = require('cors'); // helps deal with cors errors
 
 // Router
 var router = require('./routes.js');
@@ -22,6 +22,9 @@ app.use(express.json());
 // Set up our routes
 app.use('/classes', router);
 
+// app.get('/bibbidybibidiidybubah', (req, res)=>{
+//   res.send('bibbidybibidiidybubah');
+// });
 // Serve the client files
 app.use(express.static(__dirname + '/../client'));
 
